@@ -1,64 +1,70 @@
-# Training 2 - Basic React: React State, Props and Ref
+# Getting Started with Create React App
 
-## Overview
-- What is a React state?
-- When to use state?
-- What is a properties (or props) in React?
-- When to use props?
-- React Ref
-- Rendering a list with React using `map`
-- Fragment in React
-- Debugging React app using React Devtools
-- Basic usage of `lodash`
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Goal
-- Understanding `state` and `props` in React
-- Able to tell the difference between `state` and `props`
-- Understanding when to use `state` and `props`
-- Understading and able to use React Ref API
-- Better component re-using with `props`
-- Using `children` props
-- Rendering a list using `map`
-- Rendering multiple components with Fragment
-- Able to bebugging with React Devtools
+## Available Scripts
 
-## Plan
-- One training/reading section
-- One practice section with the given task below
+In the project directory, you can run:
 
-## Reading (Optional)
-- Fullstack React - Part 1
-- From **Making Product Data-driven** (p.27) to **Methodology review** (p.114)
+### `yarn start`
 
-## Tasks and Requimenets
-- Task 1
-  - Create a simple modal using React state
-  - Source code must be stored in `Training2/src/task1` folder
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-- Task 2
-  - Create a modal that will render its children
-    ```jsx
-    <Modal>
-      Hello
-      <CloseButton />
-    </Modal>
-    ```
-  - There is a button to close the modal from the children component
-  - Using `state` and `props` to complete this task
-  - Source code must be stored in `Training2/src/task2` folder
-  - *You must implement this modal by your own. No library is allowed*
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-- Task 3
-  - Given an input that allow a user to enter a number and a button with `Start` label
-  - When a user press `Start`
-    - If input is empty, display an error tell a user that: 'Please input a number'
-    - If input is not a valid number, display an error tell a user that: 'Invalid input. Must be a number'
-    - If input is a negative number, display an error tell a user that: 'Number must be greater than 0'
-    - Otherwise, render a component that will countdown the given number from inputed number down to zero
-  - User is able to stop the countdown progress with `Stop` button.
-  - The `Stop` button should only be shown when the `Start` button is pressed
-  - Source code must be stored in `Training2/src/task3` folder
+### `yarn test`
 
-## Test
-- Popup test with 10-15 questions about React
-- You will need to achieve at least 60% of total score to pass this test
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `yarn build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `yarn eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `yarn build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

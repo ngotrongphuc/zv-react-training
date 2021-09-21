@@ -1,0 +1,7 @@
+.modal {
+    border: 1px solid;
+    padding: 100px;
+    box-shadow: 5px 5px 5px grey;
+    background-color: pink;
+    position: relative;
+}
