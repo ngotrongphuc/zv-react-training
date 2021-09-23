@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Modal from '../task1/Modal';
 
 function Task3() {
@@ -42,6 +42,12 @@ function Task3() {
         setIsCounting(false);
         clearInterval(timer);
     }
+
+    useEffect(() => {
+        if (time <= 0) {
+            stop();
+        }
+    }, [time]);
 
     return (
         <>

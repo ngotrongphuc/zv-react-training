@@ -1,0 +1,13 @@
+.App {
+    flex-direction: row;
+    display: flex;
+}
+
+.box {
+    display: flex;
+    flex: 1;
+    border: 3px solid;
+    align-items: center;
+    flex-direction: column;
+
+}
