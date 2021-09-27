@@ -1,27 +1,30 @@
 import React, { useState, useCallback } from 'react';
 import './App.css';
+import Modal from './Modal/Modal';
 
 function App() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [show, setShow] = useState(false);
   const [log, setLog] = useState([]);
 
   const openModal = () => {
-    setIsModalOpen(true)
+    setShow(true);
     startListening();
   };
+
+  const closeModal = () => setShow(false);
 
   const listener = useCallback((event) => {
     setLog(log => [...log, event.code]);
   }, []);
 
   function startListening() {
-    document.addEventListener("keydown", listener)
+    document.addEventListener("keydown", listener);
   }
 
   return (
     <div className="App">
       <div className="main">
-        <Modal isModalOpen={isModalOpen}>
+        <Modal title="My Modal" onClose={closeModal} show={show}>
           <textarea />
         </Modal>
         <button onClick={openModal}>Open Modal</button>
@@ -29,15 +32,6 @@ function App() {
       </div>
     </div>
   );
-}
-
-function Modal(props) {
-  return (
-    props.isModalOpen === false ? null :
-      <div className="modal">
-        {props.children}
-      </div>
-  )
 }
 
 function List(props) {
