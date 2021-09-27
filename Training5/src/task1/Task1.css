@@ -1,0 +1,36 @@
+.Task1 {
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+}
+
+label{
+    margin-right: 20px;
+}
+
+.table {
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, tr {
+    border: 1px solid black;
+    text-align: left;
+    padding: 8px;
+}
+
+td {
+    padding: 10px;
+}
+
+td:nth-child(2) {
+    width: 100%;
+}
+
+td:nth-child(3) {
+    display: flex;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}

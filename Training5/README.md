@@ -1,65 +1,70 @@
-# Training 5 - Advanced React: Redux and React Redux
+# Getting Started with Create React App
 
-## Overview
-- Introduction to fundemental of functional programming
-  - Immutable
-  - What is a side effect?
-  - Benefit of functional programming
-  - The role of functional programming in Redux architecture
-  - Using JS functional functions: `map`, `filter`, `reduce`, `some`, `every`
-- Introduction to Redux architecture
-- Understanding Redux architecture data flow (Uni-directional data flow)
-  - What is a redux action?
-  - What is a reducer?
-  - What is a action dispatcher?
-- Why do we need to use Redux?
-- Connecting Redux with React using React Redux
-- Redux state vs React state
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Goal
-- Understanding basic of functional programming
-- Why do reducer in redux is a pure function?
-- The important of pure function
-- Fluently using `map`, `filter`, `reduce`, `some`, `every`
-- Understanding the Redux architecture
-- Building an application using mixed React state and Redux state
+## Available Scripts
 
-## Plan
-- One Redux training section with fundamental functional programming concept
-- One pair programming section about Redux
+In the project directory, you can run:
 
+### `yarn start`
 
-## Reading (Optional)
-- Fullstack React - Part 2
-- From Redux (p.452) to Asynchronicity and server communication (p.568)
-- Lecture notes
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-## Tasks and Requimenets
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-Task 1: 
-- Building a to-do management application using Redux, Backend mock API `../templates/todos-mock-api`
-- Implement CRUD todo
-- Implement search by name
-- Implement add filter Show Completed? to turn on/off load completed todos or not
-- Reducer, actions must be designed well
+### `yarn test`
 
-Task 2:
-- Building a simple dashboard using Redux, Backend mock API `../templates/login-mock-api`
-- Please review the dashboard layout:
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-![dashboard-layout](https://user-images.githubusercontent.com/47735787/122709801-32d36780-d289-11eb-88e0-2aa479a98485.jpg)
-- Requirements:
-  - Using react-router config routes like that
-  - You must reuse stucture routes & layout components if these pages have the same layout
-  - You must reuse the user detail component
-  - If the user logged -> `/login` -> redirect to `/app`
-  - If the user have not logged -> `/app/*` -> redirect to `/login`
-  - If the user go to the url path which != `/login` or != `/app/*` then check user logged or not, logged redirect to `/app`, not logged redirect to `/login`
-  - Whenever call to backend API and get the 403 status, we should add notification "You have not permission to do it" and redirect to `/app` (You can login with User role andcall **GET** `/users` to get this status)
-  - If user go to `/app/users/:id` by enter url into browser address and the id is invalid, add notification "User is not found" and redirect to "/app/users"
-  - Nice to use redux saga in task
-  - Reducer, actions must be designed well
+### `yarn build`
 
-## Test
-- Popup test with 10-15 questions about React and Redux
-- You will need to achieve at least 70% of total score to pass this test
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `yarn eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `yarn build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
