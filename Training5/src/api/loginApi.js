@@ -1,18 +1,9 @@
-const baseURL = "http://localhost:9000/todos";
+const baseURL = "http://localhost:9000";
 
-const todosApi = {
-    getTodos: async () => {
+const loginApi = {
+    getToken: async (body) => {
         try {
-            const response = await fetch(baseURL);
-            const data = await response.json();
-            return data;
-        } catch (error) {
-            console.log(error);
-        }
-    },
-    addTodo: async (body) => {
-        try {
-            const response = await fetch(baseURL, {
+            const response = await fetch(`${baseURL}/login`, {
                 method: "POST",
                 body: new URLSearchParams(body)
             });
@@ -22,11 +13,12 @@ const todosApi = {
             console.log(error);
         }
     },
-    updateTodo: async (id, body) => {
+    getMyInfo: async (token) => {
         try {
-            const response = await fetch(`${baseURL}/${id}`, {
-                method: "PUT",
-                body: new URLSearchParams(body)
+            const response = await fetch(`${baseURL}/api/users/my`, {
+                headers: new Headers({
+                    'Authorization': `Bearer ${token}`,
+                }),
             });
             const data = await response.json();
             return data;
@@ -34,12 +26,18 @@ const todosApi = {
             console.log(error);
         }
     },
-    deleteTodo: async (id) => {
+    getUsers: async (token) => {
         try {
-            const response = await fetch(`${baseURL}/${id}`, {
-                method: "DELETE"
+            const response = await fetch(`${baseURL}/api/users`, {
+                headers: new Headers({
+                    'Authorization': `Bearer ${token}`,
+                }),
             });
             const data = await response.json();
+            const errorCode = response.status;
+            if (errorCode === 403) {
+                throw data.error;
+            }
             return data;
         } catch (error) {
             console.log(error);
@@ -47,4 +45,4 @@ const todosApi = {
     },
 };
 
-export default todosApi;
+export default loginApi;
