@@ -2,7 +2,9 @@ import { actionTypes } from './actions';
 
 const initialState = {
     data: [],
-    filteredData: []
+    filteredData: [],
+    networkStatus: true,
+    drafts:[]
 }
 
 const todoReducer = (state = initialState, action) => {
