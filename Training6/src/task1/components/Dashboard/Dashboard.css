@@ -1,0 +1,98 @@
+.dashboard {
+    min-height: 100vh;
+    background-color: pink;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    padding: 10px 30px 10px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    flex: 1;
+    cursor: pointer;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border: 1px solid;
+    border-radius: 30px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.dropdown {
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    display: flex;
+}
+
+.dropdown-content {
+    position: absolute;
+    top: 70px;
+    background-color: white;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    width: 100px;
+}
+
+.dropdown-content>p {
+    cursor: pointer;
+    text-align: center;
+}
+
+.dropdown-content>p:hover {
+    text-decoration: underline;
+}
+
+.body {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex: 1;
+    position: relative;
+}
+
+.container {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    flex-direction: row;
+    display: flex;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    border: 1px solid;
+    border-right: none;
+    width: 100px;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.main {
+    display: flex;
+    flex: 1;
+    border: 1px solid;
+}
+
+.footer {
+    padding: 30px;
+}
