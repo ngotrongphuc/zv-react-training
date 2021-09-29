@@ -1,5 +1,5 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
-import { actionTypes, receiveAllTodos, receiveAddedTodo, receiveUpdatedTodo,receiveDeletedTodo } from './actions';
+import { actionTypes, receiveAllTodos, receiveAddedTodo, receiveUpdatedTodo, receiveDeletedTodo } from './actions';
 import todosApi from '../../../api/todosApi';
 
 function* getAllTodos() {
@@ -12,22 +12,20 @@ function* getAllTodos() {
 }
 
 function* addTodo(action) {
-    const { onSuccess, body } = action.payload;
+    const { body } = action.payload;
     try {
         const result = yield call(todosApi.addTodo, body);
         yield put(receiveAddedTodo(result));
-        onSuccess && onSuccess(result);
     } catch (e) {
         console.error(e);
     }
 }
 
 function* updateTodo(action) {
-    const { onSuccess, id, body } = action.payload;
+    const { id, body } = action.payload;
     try {
         const result = yield call(todosApi.updateTodo, id, body);
         yield put(receiveUpdatedTodo(result));
-        onSuccess && onSuccess(result);
     } catch (e) {
         console.error(e);
     }

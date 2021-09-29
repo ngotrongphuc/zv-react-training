@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 import './Dashboard.css';
 import avatar from '../../../logo.svg';
-import { requestMyInfo } from '../../../redux/modules/task2/actions';
+import { requestMyInfo, receiveUsers } from '../../../redux/modules/task2/actions';
 
 export default function Dashboard(props) {
     const history = useHistory();
@@ -17,6 +17,9 @@ export default function Dashboard(props) {
         )
     }, [])
     function logout() {
+        dispatch(
+            receiveUsers({ users: [] })
+        )
         localStorage.removeItem('token');
         history.push('/login')
     }

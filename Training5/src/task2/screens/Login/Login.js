@@ -23,7 +23,6 @@ export default function Login(props) {
         )
     }
 
-
     //redirect to home if logged in and token is valid
     const token = localStorage.getItem('token');
     const isTokenExpired = token => {

@@ -9,7 +9,7 @@ function Task1() {
     const [editingId, setEditingId] = useState(null);
     const [search, setSearch] = useState('');
     const [showCompleted, setShowCompleted] = useState(true);
-    const [showIncomplete,setShowIncomplete] = useState(true)
+    const [showIncomplete, setShowIncomplete] = useState(true)
     const dispatch = useDispatch();
     const todoReducer = useSelector(state => state.todoReducer);
     const data = todoReducer.filteredData;
@@ -17,6 +17,11 @@ function Task1() {
     useEffect(() => {
         getAllTodos();
     }, []);
+    useEffect(() => {
+        setInput('');
+        setIsCompleted(false);
+        setEditingId(null);
+    }, [data]);
 
     function getAllTodos() {
         dispatch(
@@ -30,11 +35,6 @@ function Task1() {
                 {
                     name: input,
                     completed: isCompleted
-                },
-                onSuccess: () => {
-                    setInput('');
-                    setIsCompleted(false);
-                    setEditingId(null);
                 }
             })
         )
@@ -53,12 +53,7 @@ function Task1() {
                     {
                         name: input,
                         completed: isCompleted
-                    },
-                    onSuccess: () => {
-                        setInput('');
-                        setIsCompleted(false);
-                        setEditingId(null);
-                    },
+                    }
                 })
             )
         }
