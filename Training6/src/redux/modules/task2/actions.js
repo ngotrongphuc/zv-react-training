@@ -1,19 +1,18 @@
 export const actionTypes = {
+    RECEIVE_NETWORK_STATUS: 'RECEIVE_NETWORK_STATUS',
     REQUEST_ALL_TODOS: 'REQUEST_ALL_TODOS',
     RECEIVE_ALL_TODOS: 'RECEIVE_ALL_TODOS',
     ADD_TODO: 'ADD_TODO',
     RECEIVE_ADDED_TODO: 'RECEIVE_ADDED_TODO',
-    UPDATE_TODO: 'UPDATE_TODO',
-    RECEIVE_UPDATED_TODO: 'RECEIVE_UPDATED_TODO',
-    DELETE_TODO: 'DELETE_TODO',
-    RECEIVE_DELETED_TODO: 'RECEIVE_DELETED_TODO',
-    SEARCH_TODO: 'SEARCH_TODO',
+    READY_TODO: 'READY_TODO',
+    SET_STATUS_TODO: 'SET_STATUS_TODO',
+    SUBMIT_TODO: 'SUBMIT_TODO',
+    RECEIVE_SUBMITTED_TODO: 'RECEIVE_SUBMITTED_TODO',
 }
 
 export const requestAllTodos = () => ({
     type: actionTypes.REQUEST_ALL_TODOS,
 })
-
 export const receiveAllTodos = payload => ({
     type: actionTypes.RECEIVE_ALL_TODOS,
     payload
@@ -24,32 +23,26 @@ export const addTodo = payload => ({
     payload
 })
 
-export const receiveAddedTodo = payload => ({
-    type: actionTypes.RECEIVE_ADDED_TODO,
+export const readyTodo = payload => ({
+    type: actionTypes.READY_TODO,
     payload
 })
 
-export const updateTodo = payload => ({
-    type: actionTypes.UPDATE_TODO,
+export const setStatusTodo = payload => ({
+    type: actionTypes.SET_STATUS_TODO,
     payload
 })
 
-export const receiveUpdatedTodo = payload => ({
-    type: actionTypes.RECEIVE_UPDATED_TODO,
+export const submitTodo = payload => ({
+    type: actionTypes.SUBMIT_TODO,
+    payload
+})
+export const receiveSubmittedTodo = payload => ({
+    type: actionTypes.RECEIVE_SUBMITTED_TODO,
     payload
 })
 
-export const deleteTodo = payload => ({
-    type: actionTypes.DELETE_TODO,
-    payload
-})
-
-export const receiveDeletedTodo = payload => ({
-    type: actionTypes.RECEIVE_DELETED_TODO,
-    payload
-})
-
-export const searchTodo = payload => ({
-    type: actionTypes.SEARCH_TODO,
+export const receiveNetworkStatus = payload => ({
+    type: actionTypes.RECEIVE_NETWORK_STATUS,
     payload
 })

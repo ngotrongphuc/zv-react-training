@@ -1,57 +1,48 @@
 import { actionTypes } from './actions';
 
 const initialState = {
+    networkStatus: navigator.onLine ? "online" : "offline",
     data: [],
-    filteredData: [],
-    networkStatus: true,
-    drafts:[]
+    drafts: [],
 }
 
 const todoReducer = (state = initialState, action) => {
     switch (action.type) {
         case actionTypes.RECEIVE_ALL_TODOS:
+            const classifiedResult = action.payload.map(todo => ({ ...todo, status: "SUCCESS" }));
+            const draftingData = state.drafts.filter(todo => todo.status === "DRAFT" ? todo : null);
             return {
                 ...state,
-                data: action.payload,
-                filteredData: action.payload
+                data: classifiedResult,
+                drafts: draftingData,
             }
-        case actionTypes.RECEIVE_ADDED_TODO:
+        case actionTypes.ADD_TODO:
             return {
                 ...state,
-                data: [...state.data, action.payload],
-                filteredData: [...state.filteredData, action.payload]
+                drafts: [...state.drafts, action.payload],
             }
-        case actionTypes.RECEIVE_UPDATED_TODO:
-            const updatedTodo = action.payload;
-            const updatedData = state.data.map(todo => todo.id === updatedTodo.id ? updatedTodo : todo);
-            const updatedFilteredData = state.filteredData.map(todo => todo.id === updatedTodo.id ? updatedTodo : todo);
+        case actionTypes.READY_TODO:
+            const readyTodo = state.drafts.map(todo => todo.id === action.payload.id ? ({ ...todo, status: "READY" }) : todo);
             return {
                 ...state,
-                data: updatedData,
-                filteredData: updatedFilteredData
+                drafts: readyTodo
             }
-        case actionTypes.RECEIVE_DELETED_TODO:
-            const deletedId = action.payload;
-            const deletedData = state.data.filter(todo => todo.id !== deletedId);
-            const deletedFilteredData = state.filteredData.filter(todo => todo.id !== deletedId);
+        case actionTypes.SET_STATUS_TODO:
+            const newStatusTodo = state.drafts.map(todo => todo.id === action.payload.id ? ({ ...todo, status: action.payload.status }) : todo);
             return {
                 ...state,
-                data: deletedData,
-                filteredData: deletedFilteredData
+                drafts: newStatusTodo
             }
-        case actionTypes.SEARCH_TODO:
-            const filter = action.payload;
-            let searchedData = state.data;
-            if (filter.completed && filter.incomplete) {
-                searchedData = state.data.filter(({ name }) => name.toLowerCase().includes(filter.name.toLowerCase()));
-            } else if (filter.completed) {
-                searchedData = state.data.filter(({ name, completed }) => name.toLowerCase().includes(filter.name.toLowerCase()) && (`${completed}` === 'true') === true);
-            } else {
-                searchedData = state.data.filter(({ name, completed }) => name.toLowerCase().includes(filter.name.toLowerCase()) && (`${completed}` === 'true') === false);
-            }
+        case actionTypes.RECEIVE_SUBMITTED_TODO:
+            const submittedTodo = state.drafts.map(todo => todo.id === action.payload.tempId ? action.payload.result : todo);
             return {
                 ...state,
-                filteredData: searchedData
+                drafts: submittedTodo
+            }
+        case actionTypes.RECEIVE_NETWORK_STATUS:
+            return {
+                ...state,
+                networkStatus: action.payload
             }
         default:
             return state;

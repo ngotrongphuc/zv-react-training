@@ -7,16 +7,24 @@
     display: flex
 }
 
-.container {
+.task2-container {
     margin: 50px;
 }
 
-.header {
+.task2-header {
     display: flex;
     justify-content: flex-end;
 }
 
-.body {
+.network-status {
+    margin-bottom: 20px;
+}
+
+.network-status * {
+    display: inline;
+}
+
+.task2-body {
     width: 500px;
     display: flex;
     flex-direction: column;
@@ -31,7 +39,7 @@
     display: flex;
 }
 
-.form input {
+.form>.input-name {
     flex: 1;
 }
 
