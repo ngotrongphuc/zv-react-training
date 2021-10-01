@@ -8,6 +8,7 @@ const todosApi = {
             return data;
         } catch (error) {
             console.log(error);
+            throw new Error(error);
         }
     },
     submitTodo: async (body) => {
